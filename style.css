@@ -65,7 +65,18 @@ body {
 
 .cell.p1 { background-color: #E74C3C; /* Červená */ }
 .cell.p2 { background-color: #3498DB; /* Modrá */ }
-.cell.selected { border: 4px solid #FFD700; /* Zlatý rámeček */ }
+.cell.selected .piece-base {
+    /* 1. Přebarvíme existující červený/modrý rámeček na Zlatý */
+    border-color: #FFD700 !important; 
+    
+    /* 2. Přidáme záři, aby to vypadalo jako výběr */
+    box-shadow: 0 0 15px 5px rgba(255, 215, 0, 0.6);
+    
+    /* 3. Mírné zvětšení pro efekt zdvihnutí (volitelné, vypadá to lépe) */
+    transform: scale(1.05);
+    transition: all 0.2s ease;
+    z-index: 10; /* Aby byla figurka nad ostatními */
+}
 
 
 /* --- STYLY FIGUREK A PODLOŽEK --- */
@@ -80,7 +91,6 @@ body {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); /* Lehký stín pro 3D efekt */
     transition: background-color 0.1s;
 }
-
 /* Hráč 1: Bílá/Světle šedá podložka (OPRAVENO: p1) */
 .cell.p1 .piece-base { 
     background-color: #F0F0F0; /* Mírně šedá pro lepší viditelnost */

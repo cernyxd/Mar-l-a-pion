@@ -78,18 +78,24 @@ let pieces = {
 // 1. VYTVOŘENÍ HRACÍHO POLE
 // ====================================================================
 
-for (let i = 0; i < CELLS; i++) {
-    const div = document.createElement("div");
-    div.classList.add("cell");
-    div.dataset.index = i;
-    
-    if (RIVER_CELLS.includes(i)) {
-        div.classList.add("water");
-    }
+function createBoardDOM() {
+    // Důležité: Vyčistíme buňky z předchozího stavu a #board
+    board.innerHTML = '';
+    cells = []; 
 
-    div.addEventListener("click", onCellClick);
-    board.appendChild(div);
-    cells.push(div);
+    for (let i = 0; i < CELLS; i++) {
+        const div = document.createElement("div");
+        div.classList.add("cell");
+        div.dataset.index = i;
+        
+        if (RIVER_CELLS.includes(i)) {
+            div.classList.add("water");
+        }
+
+        div.addEventListener("click", onCellClick);
+        board.appendChild(div);
+        cells.push(div);
+    }
 }
 
 // ====================================================================
@@ -326,6 +332,6 @@ function updateScoreTables() {
 // ====================================================================
 // SPUŠTĚNÍ
 // ====================================================================
-
+createBoardDOM();
 readyButton.addEventListener("click", handleReady);
 draw();
