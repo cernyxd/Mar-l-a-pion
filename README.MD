@@ -9,7 +9,7 @@ Pro spuštění hry stačí mít stažené všechny soubory (`index.html`, `scri
 
 1.  **Klonujte** repozitář:
     ```bash
-    git clone [ADRESA_VAŠEHO_REPOZITÁŘE]
+    git clone https://github.com/cernyxd/Mar-l-a-pion
     ```
 2.  Otevřete soubor **`index.html`** ve webovém prohlížeči (např. Google Chrome nebo Firefox).
 
