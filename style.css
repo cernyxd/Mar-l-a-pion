@@ -91,10 +91,61 @@ body {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); /* Lehký stín pro 3D efekt */
     transition: background-color 0.1s;
 }
+
+.piece-base.hidden {
+    background-color: #666 !important; /* Neutrální šedá */
+    border: 2px solid #333 !important;
+    cursor: default; /* Nelze na ni klikat jako na vlastní */
+}
+
+/* Skryjeme ikonu uvnitř hidden base */
+.piece-base.hidden .piece-icon {
+    display: none;
+}
+
+/* Volitelné: Přidání otazníku pro skryté figurky */
+.piece-base.hidden::after {
+    content: "?";
+    color: rgba(255,255,255,0.5);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.piece-base.selected {
+    /* Přidá výrazný zlatý box-shadow a ponechá původní stín */
+    box-shadow: 0 0 0 4px #FFD700, 0 1px 3px rgba(0, 0, 0, 0.6); 
+    transform: scale(1.05); /* Mírné zvětšení pro lepší vizuální efekt */
+    transition: transform 0.1s, box-shadow 0.1s; /* Plynulá animace */
+    z-index: 10;
+}
 /* Hráč 1: Bílá/Světle šedá podložka (OPRAVENO: p1) */
 .cell.p1 .piece-base { 
     background-color: #F0F0F0; /* Mírně šedá pro lepší viditelnost */
     border: 3px solid #E74C3C; /* Červený rámeček pro identifikaci P1 */
+}
+
+.piece-rank {
+    position: absolute;
+    top: -5px;      /* Posun nahoru (přes okraj rámečku) */
+    left: -5px;     /* Posun doleva */
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    color: white;
+    border: 2px solid white; /* Bílý okraj pro kontrast */
+    border-radius: 50%; /* Kruhový tvar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7em;
+    font-weight: 700;
+    z-index: 10;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* 3. Zajištění, že rank je skryt, když je figurka skryta (pro soupeře) */
+.piece-base.hidden .piece-rank {
+    visibility: hidden; 
 }
 
 /* Hráč 2: Červená podložka (OPRAVENO: p2) */
