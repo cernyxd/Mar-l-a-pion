@@ -64,7 +64,7 @@ body {
 /* --- STYLY HRÁČŮ A VÝBĚRU (OPRAVENO: POUŽÍVÁ p1, p2) --- */
 
 .cell.p1 { background-color: #E74C3C; /* Červená */ }
-.cell.p2 { background-color: #3498DB; /* Modrá */ }
+.cell.p2 { background-color: #ffffff; /* Bílá */ }
 .cell.selected .piece-base {
     /* 1. Přebarvíme existující červený/modrý rámeček na Zlatý */
     border-color: #FFD700 !important; 
@@ -151,7 +151,7 @@ body {
 /* Hráč 2: Červená podložka (OPRAVENO: p2) */
 .cell.p2 .piece-base { 
     background-color: #E74C3C; /* Červená */
-    border: 2px solid #3498DB; /* Modrý rámeček pro identifikaci P2 */
+    border: 2px solid #ffffff; /* Bílý rámeček pro identifikaci P2 */
 }
 
 /* --- KONTRAST IKON NA PODLOŽKÁCH --- */
@@ -259,4 +259,4 @@ body {
 
 /* Zvýraznění aktivního hráče v tabulce */
 #player1-score-table.active-player { border: 3px solid #E74C3C; }
-#player2-score-table.active-player { border: 3px solid #3498DB; }
+#player2-score-table.active-player { border: 3px solid #ffffff; }

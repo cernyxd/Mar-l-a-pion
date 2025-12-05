@@ -181,7 +181,7 @@ function draw() {
     }
     
     // C. Info panel
-    const playerText = currentPlayer === 1 ? "Hráč 1 (Červený)" : "Hráč 2 (Modrý)";
+    const playerText = currentPlayer === 1 ? "Hráč 1 (Červený)" : "Hráč 2 (Bílý)";
     gameInfo.textContent = playerText;
     gameInfo.className = `player-color ${currentPlayer === 1 ? 'p1' : 'p2'}`;
     
