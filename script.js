@@ -202,7 +202,7 @@ function startGame(id) {
     lobbyControls.style.display = 'none';
     mainLayout.style.display = 'flex'; 
     
-    gameCodeDisplay.textContent = `Kód místnosti: ${id} | Jsi Hráč ${myPlayerID}`;
+    gameCodeDisplay.textContent = `Kód místnosti: ${id} | Hráč ${myPlayerID}`;
 
     database.ref('rooms/' + id).on('value', (snapshot) => {
         const roomData = snapshot.val();
